@@ -81,3 +81,27 @@ $size: 200px; // 전역변수 (전체 영역에서 시용 가능)
 .box {
     width: $size;
 }
+
+// 산술 연산
+// 산술연산을 할때에는 기본적인 단위가 동일해야한다. 단, calc()함수를 사용하면 가능하게 한다.
+div {
+    width: 20px + 20px;
+    height: 40px - 10px;
+    font-size: 10px * 2;
+    margin: (30px / 2); // 나누기 연산은 제대로 컴파일이 안됨 왜냐하면 /는 단축속성을 나타낼때 /가 키워드이기 때문이다. ()로 묶어서 하거나 변수틑 통헤 나눠야한다.
+    padding: 20px % 7;
+}
+
+span {
+    $size: 20px;
+    font-size: $size / 2; // 변수를 통해 나누기 연산을 한다.
+    line-height: 10px + 12px / 2; // 다른 산술연산을 혼합하여 사용한다.
+    font-family: serif;
+    font: 10px / 10px serif; // 앞에는 font-size, 뒤에는 line-height
+}
+
+.boxs {
+    background-color: royalblue;
+    width: calc(100% -200px);
+    height: 100px;
+}
