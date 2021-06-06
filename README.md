@@ -6,3 +6,4 @@
   - 중첩 with SassMeister
   - 상위 선택자 참조
   - 중첩된 속성
+  - 변수
