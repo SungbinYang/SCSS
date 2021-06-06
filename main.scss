@@ -62,3 +62,22 @@
     }
     ;
 }
+
+// 변수(Variables)
+$size: 200px; // 전역변수 (전체 영역에서 시용 가능)
+.container {
+    $size: 100px;
+    position: fixed;
+    top: $size;
+    .item {
+        $size: 50px;
+        width: $size;
+        height: $size;
+        transform: translateX($size);
+    }
+    left: $size; // 범위는 .container 안이여서 100px일것 같지만 .item에서는 값이 이미 다시 재할당 되었기 때문에 50px이 나온다.
+}
+
+.box {
+    width: $size;
+}
