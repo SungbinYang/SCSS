@@ -1,7 +1,14 @@
+// 중첩기능
 .container {
-    h1 {
-        color: royalblue;
-        /* background-color: orange; */
-        // font-size: 60px;
+    >ul {
+        li {
+            font-size: 40px;
+            .name {
+                color: royalblue;
+            }
+            .age {
+                color: orange;
+            }
+        }
     }
 }
