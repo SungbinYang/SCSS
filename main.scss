@@ -124,7 +124,7 @@ span {
 // }
 // 재활용
 @mixin center {
-    // 재활용으로 사용한 코드
+    // 재활용으로 사용한 코드, css의 속성과 값의 집합
     display: flex;
     justify-content: center;
     align-items: center;
@@ -137,7 +137,16 @@ span {
     }
 }
 
+// 함수 추가
+@function ratio($size, $ratio) {
+    // 함수처럼 반환결과 값을 적용
+    @return $size * $ratio;
+}
+
 .toolbox {
+    $width: 160px;
+    width: $width;
+    height: ratio($width, 9/16);
     @include center;
 }
 
@@ -157,4 +166,12 @@ span {
 
 .box1 {
     @include box;
+}
+
+// 반복문
+@for $i from 1 through 10 {
+    .mybox:nth-child(#{$i}) {
+        // 값을 적는 부분이 아니여서 보간처리
+        width: 100px * $i; // 값을 적는 부분이여서 직접 작성
+    }
 }
