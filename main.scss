@@ -198,3 +198,12 @@ span {
         background-color: rgba($color, .5);
     }
 }
+
+@import "./sub",
+"./sub2";
+$color: royalblue;
+.myContainers {
+    h1 {
+        color: $color;
+    }
+}
