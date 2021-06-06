@@ -105,3 +105,56 @@ span {
     width: calc(100% -200px);
     height: 100px;
 }
+
+// .containeres {
+//     width: 200px;
+//     height: 200px;
+//     background-color: orange;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     .items {
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         width: 100px;
+//         height: 100px;
+//         background-color: royalblue;
+//     }
+// }
+// 재활용
+@mixin center {
+    // 재활용으로 사용한 코드
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containeres {
+    @include center; // 재활용 코드를 포함한다.
+    .items {
+        @include center;
+    }
+}
+
+.toolbox {
+    @include center;
+}
+
+// 인수를 담을수도 있다.
+@mixin box($size: 80px, $color: tomato) {
+    width: $size;
+    height: $size;
+    background-color: $color;
+}
+
+.container1 {
+    @include box(200px, red);
+    .item {
+        @include box($color: green); // 원래는 인수가 쓰여진 순서데로 작성해야하지만 키워드 안수를 사용하여 선택적 인수의 값을 조절할수 있다.
+    }
+}
+
+.box1 {
+    @include box;
+}
