@@ -237,3 +237,26 @@ $v in $map {
         color: $v;
     }
 }
+
+@mixin left-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @content; // 새로운 코드가 추가될수 있는 여지를 남긴다.
+}
+
+.containers {
+    width: 100px;
+    height: 100px;
+    @include left-top;
+}
+
+.bex {
+    width: 200px;
+    height: 300px;
+    @include left-top {
+        bottom: 0;
+        right: 0;
+        margin: auto;
+    }
+}
