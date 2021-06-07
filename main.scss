@@ -218,8 +218,22 @@ $list: orange,
 royalblue,
 yellow; // js의 배열과 유사
 $map: ( o: orange, r: royalblue, y: yellow); // js의 객체 데이터와 비슷 (key : value)
+// map이나 list를 반복문으로 활용할려면 @each를 사용
 .box {
     width: 100px; // 숫자 데이터
     color: red; // 숫자 데이터
     position: relative; // 문자열 데이터
+}
+
+@each $c in $list {
+    .boxes {
+        color: $c;
+    }
+}
+
+@each $k,
+$v in $map {
+    .boxes-#{$k} {
+        color: $v;
+    }
 }
